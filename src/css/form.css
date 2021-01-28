@@ -1,0 +1,21 @@
+.cont-form {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     height: 70vh;
+}
+.contInputs {
+     display: flex;
+     flex-direction: column;
+}
+.contInputs textarea {
+     resize: vertical;
+     height: 70px;
+}
+.contInputs label {
+     text-transform: capitalize;
+    font-size: 14px;
+    color: grey;
+    font-weight: 500;
+}

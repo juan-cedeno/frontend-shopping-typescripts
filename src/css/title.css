@@ -1,0 +1,15 @@
+.title {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     margin-top: 85px;
+}
+.title > h3 {
+     font-size: 32px;
+    text-transform: uppercase;
+}
+.title > p {
+     font-size: 20px;
+     margin-top: 5px;
+}
