@@ -13,7 +13,7 @@ interface IUser {
 
 export const LoginPage = () => {
   const [value, setValue] = useState<IUser>({
-    email: "fernando@fernando.com",
+    email: "test@test.com",
     password: "123456",
   });
 
