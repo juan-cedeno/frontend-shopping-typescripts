@@ -1,0 +1,33 @@
+.cont-empty {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100vw;
+     margin-top: 40px
+}
+
+.btn-letter-empty {
+     display: flex;
+     flex-direction: column;
+}
+
+.btn-letter-empty p {
+     text-transform: capitalize;
+     font-size: 35px;
+     margin-bottom: 30px;
+     color: gray;
+     opacity: 0.6;
+}
+
+.btn-letter-empty button {
+     padding: 13px 0px;
+     text-align: center;
+     text-transform: uppercase;
+     background-color: cornflowerblue;
+     border: 1px solid cornflowerblue;
+     color: #fff;
+     font-weight: 600;
+     letter-spacing: 1px;
+     cursor: pointer;
+     outline: none;
+}

@@ -1,6 +1,6 @@
 import { useCallback, useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { StoreContext } from "../context/StoreContext";
-import i18njs from "../i18nj";
 import { Products } from "../interfaces/products";
 
 interface IProps {
@@ -9,17 +9,18 @@ interface IProps {
 
 export const BtnAddToCart = (props: IProps ) => {
   const { product } = props;
+  const {t} = useTranslation()
 
   const { addProductcart} = useContext(StoreContext);
 
   const handlenAddCart = useCallback(() => {
     addProductcart(product);
     
-  }, [addProductcart, product]);
+  }, [addProductcart, product ]);
 
   return (
     <div className="cart-detail-product">
-      <button className = 'bottom-detail' onClick={handlenAddCart}>{i18njs.t("addToCart")}</button>
+      <button className = 'bottom-detail detail-btn' onClick={handlenAddCart}>{t("addToCart")}</button>
     </div>
   );
 };

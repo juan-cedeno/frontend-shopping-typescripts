@@ -1,4 +1,4 @@
-import i18njs from "../i18nj";
+
 import "../css/form.css";
 import { Title } from "../components/Title";
 import { useCallback, useEffect, useState } from "react";
@@ -6,6 +6,7 @@ import { Products } from "../interfaces/products";
 import productService from "../services/products";
 import { notificationMessage } from "../helpers/notificationMessage";
 import { useHistory, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 interface IParams {
   id : string
@@ -18,6 +19,8 @@ export const FormProductPage = () => {
     image: "",
     description: "",
   });
+
+  const {t} = useTranslation()
 
   const [loading, setLoading] = useState(false)
   
@@ -82,17 +85,17 @@ export const FormProductPage = () => {
   return (
     <>
       <div className="cont-form">
-        <Title title={ params.id ? i18njs.t("editProduct") : 'addProduct'} subTitle="" />
+        <Title title={ params.id ? t("editProduct") : 'addProduct'} subTitle="" />
 
         <form onSubmit={handlenClickValue}>
           <div className="contInputs">
-            <label>{i18njs.t("name")}</label>
+            <label>{t("name")}</label>
             <input
               type="text"
               name="name"
               value={name}
               className="input"
-              placeholder="Name"
+              placeholder={t('name')}
               autoFocus
               autoComplete="off"
               onChange={handlenChangeValue}
@@ -100,10 +103,10 @@ export const FormProductPage = () => {
           </div>
 
           <div className="contInputs">
-            <label>{i18njs.t("price")}</label>
+            <label>{t("price")}</label>
             <input
               type="number"
-              name="price"
+              name={t('price')}
               value={price}
               placeholder="Price"
               className="input"
@@ -113,19 +116,19 @@ export const FormProductPage = () => {
           </div>
 
           <div className="contInputs">
-            <label>{i18njs.t("description")}</label>
+            <label>{t("description")}</label>
             <textarea
               name="description"
               className="input"
               value={description}
-              placeholder="Description"
+              placeholder={t('description')}
               autoComplete="off"
               onChange={handlenChangeValue}
             />
           </div>
 
           <div className="contInputs">
-            <label>{i18njs.t("image")}</label>
+            <label>{t("image")}</label>
             <input
               type="text"
               name="image"
@@ -138,7 +141,7 @@ export const FormProductPage = () => {
           </div>
           <button 
           className = {`${loading ? 'btn disable' : 'btn'}`}>
-          {params.id ? i18njs.t('editProduct') : i18njs.t('addProduct')}
+          {params.id ? t('editProduct') : t('addProduct')}
           </button>
         </form>
       </div>

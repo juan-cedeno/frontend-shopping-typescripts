@@ -1,12 +1,14 @@
-import i18njs from "../i18nj"
+import i18njs from "i18n-js"
 import '../css/cart-total.css'
 import { useCallback, useContext, useState } from "react"
 import { StoreContext } from "../context/StoreContext"
+import { useTranslation } from "react-i18next"
 
 
 export const CartTotal = () => {
 
      const [fixed, setFixed] = useState<boolean>(false)
+     const {t} = useTranslation()
      const {productCart, clear} = useContext(StoreContext)
 
      let totalItem: number = 0
@@ -36,18 +38,18 @@ export const CartTotal = () => {
           <>
                <div className= {fixed ? 'active cont-total' : 'cont-total' } >
                     <div className = 'total'>
-                         <p>{i18njs.t('total')}</p>
+                         <p>{t('total')}</p>
                          <label>{totalItem}</label>
                     </div>
                     <div className = 'payment'>
-                         <p>{i18njs.t('totalPayment')}</p>
+                         <p>{t('totalPayment')}</p>
                          <label>{i18njs.toCurrency(totalPayment)}</label>
                     </div>
                     <div className = 'btn-total'>
-                         <button className = 'check btn'>{i18njs.t('checkout')}</button>
+                         {/* <button className = 'check btn'>{t('checkout')}</button> */}
 
                          <div className = 'cont-clear'>
-                              <button onClick = {handlenClear}>{i18njs.t('clear')}</button>
+                              <button onClick = {handlenClear}>{t('clear')}</button>
                          </div>
                     </div>
                </div>

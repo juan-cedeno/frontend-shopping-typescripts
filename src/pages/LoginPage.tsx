@@ -1,9 +1,9 @@
 import { useCallback, useContext, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Title } from "../components/Title";
 import { StoreContext } from "../context/StoreContext";
 import "../css/user.css";
 import { notificationMessage } from "../helpers/notificationMessage";
-import i18njs from "../i18nj";
 import userService from "../services/user";
 
 interface IUser {
@@ -18,6 +18,7 @@ export const LoginPage = () => {
   });
 
   const [loading, setLoading] = useState(false)
+  const {t} = useTranslation()
 
   const {loginUser} = useContext(StoreContext)
 
@@ -64,8 +65,8 @@ export const LoginPage = () => {
   return (
     <>
       <Title
-        title={i18njs.t("signIn")}
-        subTitle={i18njs.t("withEmailAndPassword")}
+        title={t("signIn")}
+        subTitle={t("withEmailAndPassword")}
       />
 
       <div className="cont-form-user">
@@ -75,7 +76,7 @@ export const LoginPage = () => {
             type="text"
             name="email"
             value={email}
-            placeholder="Email"
+            placeholder={t('email')}
             autoComplete="off"
             autoFocus
             onChange={handlenChangeLogin}
@@ -86,7 +87,7 @@ export const LoginPage = () => {
             type="password"
             name="password"
             value={password}
-            placeholder="Password"
+            placeholder={t('password')}
             autoComplete="off"
             onChange={handlenChangeLogin}
           />
@@ -94,7 +95,7 @@ export const LoginPage = () => {
           <button 
           className={`${loading ? 'btn disable' : 'btn'}`}
           disabled = {loading}
-          >{loading ? i18njs.t('wait') : 'login'}</button>
+          >{loading ? t('wait') : 'login'}</button>
         </form>
       </div>
     </>

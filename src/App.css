@@ -18,3 +18,12 @@ body {
   border: 1px solid #6A6A6A !important;
   cursor: no-drop !important;
 }
+.skeletor-detail {
+ display: flex;
+ height: 100vh;
+ align-items: center;
+}
+.detail-btn {
+  padding: 12px;
+  font-weight: 600;
+}

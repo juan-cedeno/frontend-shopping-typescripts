@@ -3,11 +3,11 @@ import { Products } from "../interfaces/products";
 import productService from "../services/products";
 import { ProductsList } from "./ProductsList";
 import { Title } from "./Title";
-import i18n from "../i18nj";
 import "../css/products.css";
 import { Link } from "react-router-dom";
 import { StoreContext } from "../context/StoreContext";
 import SkeletorProduct from "../utils/skeletor-product";
+import { useTranslation } from "react-i18next";
 
 export const Product = () => {
   const [items, setItems] = useState<Products[]>([]);
@@ -33,16 +33,18 @@ export const Product = () => {
       setItems(productsDelete)
   },[items])
 
+  const {t} = useTranslation()
   return (
+
     <>
       <div>
-        <Title title={i18n.t("store")} subTitle={i18n.t("WelcomeToTheStore")} />
+        <Title title={t('store')} subTitle={t('WelcomeToTheStore')} />
       </div>
 
       <div className="add-product">
         {user && (
           <Link className="btn" to="/add-product">
-            Add product
+           {t('addProduct')}
           </Link>
         )}
       </div>

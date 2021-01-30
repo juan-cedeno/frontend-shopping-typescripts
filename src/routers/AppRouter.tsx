@@ -10,7 +10,7 @@ export const AppRouter = () => {
     <Router>
         <div>
         <Switch>
-          <Route path = '/' component = {DashboardRouter}></Route>
+          <Route  path = '/' component = {DashboardRouter}></Route>
         </Switch>
       </div>
     </Router>

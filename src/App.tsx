@@ -7,6 +7,7 @@ import { useCallback, useState, useEffect } from "react";
 import { User } from "./interfaces/user";
 import { Spinner } from "./components/Spinner";
 import { Products } from "./interfaces/products";
+import './i18n'
 
 function App() {
   const [user, setUser] = useState<User | undefined>();
@@ -70,10 +71,9 @@ function App() {
     [productCart]
   );
 
-  const deleteItemsCart = useCallback(
-    (product: Products) => {
+  const deleteItemsCart = useCallback((product: Products) => {
       let copy = [...productCart];
-
+      
       const found = copy.find((i) => i._id === product._id);
 
       if (found) {

@@ -1,6 +1,6 @@
 import { useCallback, useContext } from "react"
 import { StoreContext } from "../context/StoreContext"
-import i18njs from "../i18nj"
+import i18njs from "i18n-js"
 import { Products } from "../interfaces/products"
 
 
