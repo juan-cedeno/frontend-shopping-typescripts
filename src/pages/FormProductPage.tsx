@@ -106,9 +106,9 @@ export const FormProductPage = () => {
             <label>{t("price")}</label>
             <input
               type="number"
-              name={t('price')}
+              name= 'price'
               value={price}
-              placeholder="Price"
+              placeholder={t('price')}
               className="input"
               autoComplete="off"
               onChange={handlenChangeValue}
