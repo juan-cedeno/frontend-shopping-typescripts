@@ -17,7 +17,13 @@ let EN = {
      productDetail : 'product detail',
      goBack : 'go back',
      itemAvailable : 'item available',
-     delivery : 'delivery time: 5 to 7 days'
+     delivery : 'delivery time: 5 to 7 days',
+     cart : 'cart',
+     itemsYourCart : 'items in your cart',
+     total : 'total',
+     totalPayment : 'total payment',
+     checkout : 'checkout',
+     clear : 'clear'
 }
 
 

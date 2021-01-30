@@ -10,7 +10,7 @@ export const PrivateRouter = (props : RouteProps) => {
 
      return (
           user?.id ? (
-               <Route {...props}/>
+              <Route {...props}/>
           ) : <Redirect to = '/'/>
                
           

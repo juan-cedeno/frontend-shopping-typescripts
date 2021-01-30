@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom"
+import { Link} from "react-router-dom"
 import { Products } from "../interfaces/products"
 import i18nJs from 'i18n-js'
 import i18nj from '../i18nj'
 import { ProductAction } from "./ProductAction"
-import { useContext } from "react"
-import { StoreContext } from "../context/StoreContext"
-
+import {  useContext } from "react"
+import { StoreContext } from "../context/StoreContext" 
+import { BtnAddToCart } from "./BtnAddToCart"
 
 interface IProps {
     products : Products,
@@ -37,7 +37,8 @@ export const ProductsList = ({products , deletedProduct}:IProps) => {
                 }
 
                 <Link to = {`/product-detail/${products._id}`}>{i18nj.t('detail')}</Link>
-                <button>{i18nj.t('addToCart')}</button>
+                
+                 <BtnAddToCart product = {products}/>   
             </div>
             
         </div>

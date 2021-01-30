@@ -1,5 +1,6 @@
 import {Switch, Route, Redirect, } from "react-router-dom";
 import { Header } from "../components/Header";
+import { CartPage } from "../pages/CartPage";
 import { FormProductPage } from "../pages/FormProductPage";
 import { HomePage } from "../pages/HomePage";
 import { LoginPage } from "../pages/LoginPage";
@@ -15,6 +16,7 @@ export const DashboardRouter = () => {
         <Header/>
         <Switch>
             <Route exact path = '/' component = {HomePage}/>
+            <Route exact path = '/cart' component = {CartPage}/>
             <PublicRouter exact path = '/login' component = {LoginPage}/>
             <PublicRouter exact path = '/register' component = {RegisterPage}/>
             <PrivateRouter exact path = '/add-product' component = {FormProductPage}/>

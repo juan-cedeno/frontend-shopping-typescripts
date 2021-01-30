@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import home from "../assets/home.png";
 import userImg from "../assets/user.png";
+import cart from '../assets/cart.png'
 import arrow from "../assets/arrow.png";
 import "../css/header.css";
 import { useCallback, useContext } from "react";
@@ -11,7 +12,7 @@ export const Header = () => {
 
   const handlenLogOut = useCallback(() => {
     logOut();
-  }, [logOut]);
+  }, [logOut]);  
 
   return (
     <header className="header">
@@ -24,8 +25,10 @@ export const Header = () => {
         <Link to="/">
           <img className="img-header" src={home} alt="home" />
         </Link>
+        <Link to="/cart">
+          <img className="img-header" src={cart} alt="cart" />
+        </Link>
       </div>
-        <Link to = ''><i className="fi-rr-angle-small-right"></i></Link>
 
       <div>
         {user?.id ? (

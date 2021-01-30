@@ -1,0 +1,66 @@
+.cont-total {
+     border: 1px solid;
+     width: 18vw;
+     padding: 40px 15px;
+}
+.active {
+     position: fixed;
+     top: 0;
+     z-index: 100;
+     margin-top: 55px;
+     animation: ease 0.5s;
+}
+.total {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+}
+.total > p {
+     font-size: 20px;
+    text-transform: capitalize;
+    margin: 8px 0px;
+}
+.total > label {
+     font-size: 22px;
+     margin-bottom: 10px;
+}
+.payment > p {
+     font-size: 22px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+.payment > label {
+     font-size: 26px;
+     margin-bottom: 10px;
+     display: block;
+}
+.btn-total {
+     display: flex;
+     flex-direction: column;
+}
+.btn-total > button {
+     width: 190px;
+    padding: 8px 0px;
+    margin: 10px 0px;
+    cursor: pointer;
+    outline: none;
+}
+
+.check {
+     font-weight: 400 !important;
+}
+.cont-clear {
+     display: flex;
+     justify-content: flex-end;
+}
+
+.cont-clear > button {
+     padding: 11px 8px;
+    text-transform: capitalize;
+    font-size: 14px;
+    color: grey;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}

@@ -5,6 +5,7 @@ import i18njs from "../i18nj";
 import { Products } from "../interfaces/products";
 import productService from "../services/products";
 import '../css/detail.css'
+import { BtnAddToCart } from "../components/BtnAddToCart";
 
 interface IParams {
   id: string;
@@ -21,6 +22,7 @@ export const ProductDetailPage = () => {
   useEffect(() => {
     const getProductById = async () => {
       const data = await productService.getProductById(id);
+      
       setProduct(data!);
     };
 
@@ -51,7 +53,7 @@ export const ProductDetailPage = () => {
           </div>    
 
         <div className = 'btn-detail'>
-          <button className = 'btn'>{i18njs.t("addToCart")}</button>
+          <BtnAddToCart product = {product}/>
           <button onClick = {handlenBack} className = 'back btn'>{i18njs.t("goBack")}</button>
         </div>
         <div className = 'available'>
