@@ -1,5 +1,6 @@
 import { useCallback, useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 import { Title } from "../components/Title";
 import { StoreContext } from "../context/StoreContext";
 import "../css/user.css";
@@ -18,6 +19,7 @@ export const LoginPage = () => {
   });
 
   const [loading, setLoading] = useState(false)
+  const history = useHistory()
   const {t} = useTranslation()
 
   const {loginUser} = useContext(StoreContext)
@@ -50,7 +52,7 @@ export const LoginPage = () => {
             name : user.name,
             id : user.id
           })
-          
+          history.push('/')
         }
         setLoading(false)
       setValue({
@@ -59,7 +61,7 @@ export const LoginPage = () => {
       });
     },
 
-    [email, password , loginUser ]
+    [email, password , loginUser , history ]
   );
 
   return (
