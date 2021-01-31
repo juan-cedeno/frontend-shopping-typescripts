@@ -10,7 +10,7 @@ import { Products } from "./interfaces/products";
 import './i18n'
 
 function App() {
-  const [user, setUser] = useState<User | undefined>();
+  const [user, setUser] = useState<User>();
   const [checking, setChecking] = useState(true);
   const [productCart, setProductCart] = useState<Products[]>([]);
 
@@ -19,15 +19,22 @@ function App() {
     setUser(user);
   }, []);
 
-  const getLoginUser = useCallback(() => {
-    const userInfo = localStorage.getItem("USER") || "";
 
-    if (userInfo) {
-      const user = JSON.parse(userInfo);
-      setUser(user);
-    }
-    setChecking(false);
+  useEffect(() => {
+    const getLoginUser = () => {
+      const userInfo = localStorage.getItem("USER");
+      console.log(userInfo);
+  
+      if (userInfo) {
+        const user = JSON.parse(userInfo);
+        setUser(user);
+        
+      }
+      setChecking(false);
+    };
+    getLoginUser()
   }, []);
+
 
   const logOut = useCallback(() => {
     localStorage.removeItem("TOKEN");
@@ -35,10 +42,6 @@ function App() {
     setChecking(false);
     setUser(undefined);
   }, []);
-
-  useEffect(() => {
-    getLoginUser();
-  }, [getLoginUser]);
 
   const addProductcart = useCallback((product: Products) => {
     setProductCart((items) => {
@@ -109,7 +112,8 @@ function App() {
           productCart,
           addQty,
           deleteItemsCart,
-          clear
+          clear,
+
         }}
       >
         <AppRouter />

@@ -10,7 +10,7 @@ interface IContext {
      productCart : Products[], 
      addQty: (product : Products) => void,
      deleteItemsCart : (product : Products) => void,
-     clear : () => void
+     clear : () => void,
 }
 
 export const StoreContext = createContext <IContext>({} as IContext)

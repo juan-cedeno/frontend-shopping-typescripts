@@ -2,12 +2,14 @@
 import axios from 'axios'
 
 
-const token = localStorage.getItem('TOKEN')
+const {token} = JSON.parse (localStorage.getItem('USER') || '[]')
+console.log(token);
 
-const verifiAxios = axios.create({
+
+const verifiToken = axios.create({
      headers : {
-          'x-token' : token
+         'x-token': token
      }
 })
 
-export default verifiAxios
+export default verifiToken

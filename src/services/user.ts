@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "./verifiToken";
 import { User } from "../interfaces/user";
 
 class userService {
@@ -21,12 +21,9 @@ class userService {
   static async renewToken () {
 
     try {
-      const {data} = await axios.get<User>(`${userService.url}/renew` , {
-        headers : {
-          'x-token' : userService.token
-        }
-      })
-
+      const {data} = await axios.get<User>(`${userService.url}/renew`)
+      console.log(data);
+      
       return data
 
     } catch (error) {
