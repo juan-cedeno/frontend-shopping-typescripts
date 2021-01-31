@@ -8,6 +8,7 @@
     position: fixed;
     width: 100vw;
     padding: 12px 50px;
+    z-index: 999;
 }
 
 .header a {

@@ -7,6 +7,7 @@ import { StoreContext } from "../context/StoreContext"
 import { BtnAddToCart } from "./BtnAddToCart"
 import { useTranslation } from "react-i18next"
 
+
 interface IProps {
     products : Products,
     deletedProduct: (id : string) => void
@@ -19,9 +20,10 @@ export const ProductsList = ({products , deletedProduct}:IProps) => {
     const {t} = useTranslation()
 
     return (
-        <div className = 'product'>
 
-            <div className = 'img-product'>
+        <div className = 'product animate__animated animate__fadeIn'>
+
+            <div className = 'img-product  '>
                 <img src = {products.image} alt = {products.name}/>
             </div>
 
@@ -42,5 +44,6 @@ export const ProductsList = ({products , deletedProduct}:IProps) => {
             </div>
             
         </div>
+
     )
 }
