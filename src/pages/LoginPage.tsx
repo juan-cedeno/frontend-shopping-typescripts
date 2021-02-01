@@ -58,7 +58,7 @@ export const LoginPage = () => {
       });
     },
 
-    [email, password , loginUser]
+    [email, password , loginUser , history]
   );
 
   return (
