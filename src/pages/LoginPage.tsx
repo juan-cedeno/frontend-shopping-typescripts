@@ -1,6 +1,6 @@
 import { useCallback, useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Title } from "../components/Title";
 import { StoreContext } from "../context/StoreContext";
 import "../css/user.css";
@@ -19,7 +19,7 @@ export const LoginPage = () => {
   });
 
   const [loading, setLoading] = useState(false)
-  // const history = useHistory()
+  const history = useHistory()
   const {t} = useTranslation()
 
   const {loginUser} = useContext(StoreContext)
@@ -44,7 +44,7 @@ export const LoginPage = () => {
       const user = await userService.loginUser(email, password);
       if (user) {
         loginUser(user)
-        window.location.reload()  
+        history.go(0)
       }
 
       setLoading(false)
