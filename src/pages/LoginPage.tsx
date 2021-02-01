@@ -42,14 +42,15 @@ export const LoginPage = () => {
       setLoading(true)
 
       const user = await userService.loginUser(email, password);
-      if (user) {
-        loginUser(user)
-        history.go(0)
-      }
 
       setLoading(false)
       if (user?.message) {
         return notificationMessage("Error", user.message, "danger");
+      }
+
+      if (user) {
+        loginUser(user)
+        history.go(0)
       }
         setLoading(false)
       setValue({
