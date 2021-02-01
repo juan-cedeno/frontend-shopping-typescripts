@@ -1,6 +1,6 @@
 import { useCallback, useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router";
 import { Title } from "../components/Title";
 import { StoreContext } from "../context/StoreContext";
 import "../css/user.css";
